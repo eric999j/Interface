@@ -1,4 +1,19 @@
-public class Chimera implements Animal, Bird{
+public class Chimera extends Torching implements Animal, Bird{
+
+    public Chimera(int level) {
+        super(level);
+    }
+
+    @Override
+    public boolean isLegend() {
+        return true;
+    }
+
+    @Override
+    public String Name() {
+        return this.getClass().getSimpleName();
+    }
+
     @Override
     public void Sound() {
         System.out.println("growl");
@@ -17,11 +32,6 @@ public class Chimera implements Animal, Bird{
     @Override
     public boolean canFly() {
         return true;
-    }
-
-    @Override
-    public String Name() {
-        return this.getClass().getSimpleName();
     }
 
     public void run(Runnable action){

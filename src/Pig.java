@@ -1,4 +1,8 @@
 public class Pig implements Animal{
+    @Override
+    public String Name() {
+        return this.getClass().getSimpleName();
+    }
 
     @Override
     public void Sound() {
@@ -8,10 +12,5 @@ public class Pig implements Animal{
     @Override
     public int Speed() {
         return 1;
-    }
-
-    @Override
-    public String Name() {
-        return this.getClass().getSimpleName();
     }
 }

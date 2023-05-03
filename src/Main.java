@@ -10,11 +10,18 @@ public class Main {
         pig.Sound();
         System.out.println("speed "+pig.Speed()+"\n");
 
-        Chimera chimera = new Chimera();
+        Dragon dragon = new Dragon(5);
+        System.out.println(dragon.Name());
+        System.out.println("is legend: "+ dragon.isLegend());
+        System.out.println("fire level: "+ dragon.getLevel()+"\n");
+
+        Chimera chimera = new Chimera(3);
         System.out.println(chimera.Name());
         System.out.println("has wings: "+chimera.Wings());
         System.out.println("can fly: "+chimera.canFly());
-        System.out.println("speed "+chimera.Speed()+"\n");
+        System.out.println("speed "+chimera.Speed());
+        System.out.println("is legend: "+ chimera.isLegend());
+        System.out.println("fire level: "+ chimera.getLevel()+"\n");
 
         // lambda + runnable is more flexible and support multi-core cpu
 
