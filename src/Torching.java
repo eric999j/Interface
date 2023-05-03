@@ -9,7 +9,7 @@ public abstract class Torching {
 
     public abstract boolean isLegend();
 
-    public int getLevel(){
+    public int getFireLevel(){
         return level;
     }
 

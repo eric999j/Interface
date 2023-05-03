@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Animal {
+String Name()
+void Sound()
+int Speed()
+}
+
+interface Bird{
+String Name()
+boolean Wings()
+boolean canFly()
+}
+
+abstract class Torching{
+public Torching(int level)
+public abstract String Name()
+public abstract boolean isLegend()
+public int getFireLevel()
+}
+
+class Lion{
+public String Name()
+public void Sound()
+public int Speed()
+}
+
+class Pig{
+public String Name()
+public void Sound()
+public int Speed()
+}
+
+class Dragon{
+public Dragon(int level)
+public String Name()
+public boolean isLegend()
+}
+
+class Chimera{
+public Chimera(int level)
+public String Name()
+public boolean isLegend()
+public void Sound()
+public int Speed()
+public boolean Wings()
+public boolean canFly()
+public void run(Runnable action)
+}
+
+Animal <|-- Lion
+Animal <|--Pig
+Animal <|--Chimera
+Bird <|--Chimera
+Torching <|-- Dragon
+Torching <|-- Chimera
+
+@enduml

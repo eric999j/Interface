@@ -5,13 +5,13 @@ public class Chimera extends Torching implements Animal, Bird{
     }
 
     @Override
-    public boolean isLegend() {
-        return true;
+    public String Name() {
+        return this.getClass().getSimpleName();
     }
 
     @Override
-    public String Name() {
-        return this.getClass().getSimpleName();
+    public boolean isLegend() {
+        return true;
     }
 
     @Override
