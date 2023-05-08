@@ -15,7 +15,7 @@ public class Main {
         System.out.println("is legend: "+ dragon.isLegend());
         System.out.println("fire level: "+ dragon.getFireLevel()+"\n");
 
-        Chimera chimera = new Chimera(3);
+        Chimera chimera = Chimera.getInstance(); // Singleton
         System.out.println(chimera.Name());
         System.out.println("has wings: "+chimera.Wings());
         System.out.println("can fly: "+chimera.canFly());

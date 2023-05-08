@@ -1,7 +1,23 @@
 public class Chimera extends Torching implements Animal, Bird{
 
-    public Chimera(int level) {
+    private static Chimera instance;
+
+    private Chimera(int level) {
         super(level);
+    }
+
+    // keep one instance
+    public static Chimera getInstance(){
+        // insure we need synchronized
+        if(instance == null){
+            synchronized(Chimera.class){ // synchronized lock in multi-thread
+                // insure to make from null
+                if(instance == null){
+                    instance = new Chimera(3);
+                }
+            }
+        }
+        return instance;
     }
 
     @Override
