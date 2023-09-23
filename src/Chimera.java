@@ -1,24 +1,35 @@
-public class Chimera extends Torching implements Animal, Bird{
+public class Chimera extends Torching implements Animal, Birds{
 
-    private static Chimera instance;
-
-    private Chimera(int level) {
-        super(level);
-    }
-
-    // keep one instance
-    public static Chimera getInstance(){
-        // insure we need synchronized
-        if(instance == null){
-            synchronized(Chimera.class){ // synchronized lock in multi-thread
-                // insure to make from null
-                if(instance == null){
-                    instance = new Chimera(3);
+        // keep one instance
+        /*
+        private static Chimera instance;
+        private Chimera(int level) {
+            super(level);
+        }
+        public static Chimera getInstance(){
+            // insure we need synchronized
+            if(instance == null){
+                synchronized(Chimera.class){ // synchronized lock in multi-thread
+                    // insure to make from null
+                    if(instance == null){
+                        instance = new Chimera(3);
+                    }
                 }
             }
+            return instance;
         }
-        return instance;
-    }
+        */
+
+        private Chimera(int level) {
+            super(level);
+        }
+        private static class InstanceHolder {
+            public static Chimera instance = new Chimera(3);
+        }
+
+        public static Chimera getInstance() {
+            return InstanceHolder.instance;
+        }
 
     @Override
     public String Name() {

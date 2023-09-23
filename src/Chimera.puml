@@ -7,7 +7,7 @@ void Sound()
 int Speed()
 }
 
-interface Bird{
+interface Birds{
 String Name()
 boolean Wings()
 boolean canFly()
@@ -52,7 +52,7 @@ public void run(Runnable action)
 Animal <|-- Lion
 Animal <|--Pig
 Animal <|--Chimera
-Bird <|--Chimera
+Birds <|--Chimera
 Torching <|-- Dragon
 Torching <|-- Chimera
 
