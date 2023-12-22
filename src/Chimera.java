@@ -1,7 +1,8 @@
 public class Chimera extends Torching implements Animal, Birds{
 
-        // keep one instance
         /*
+        // v1: keep one instance
+
         private static Chimera instance;
         private Chimera(int level) {
             super(level);
@@ -18,8 +19,8 @@ public class Chimera extends Torching implements Animal, Birds{
             }
             return instance;
         }
-        */
 
+        // v2
         private Chimera(int level) {
             super(level);
         }
@@ -30,6 +31,32 @@ public class Chimera extends Torching implements Animal, Birds{
         public static Chimera getInstance() {
             return InstanceHolder.instance;
         }
+       */
+
+        /*
+         private and static for prevent public calling
+         and allocate specific memory location
+
+         volatile means the working memory of each thread is
+         not used, and access, reading and writing are always
+         done from the main memory.
+        */
+        private volatile static Chimera uniqueInstance;
+
+        private Chimera(int level) {super(level);}
+
+        public static Chimera getInstance() {
+            // if not instantized, into synchronized block
+            if (uniqueInstance == null){
+                synchronized (Chimera.class){ // use synchronized good for multithread, but lower performance
+                    // check again in synchronized block
+                    if(uniqueInstance == null)
+                        uniqueInstance = new Chimera(3);
+                }
+            }
+            return uniqueInstance;
+        }
+
 
     @Override
     public String Name() {
