@@ -1,4 +1,4 @@
-public class Chimera extends Torching implements Animal, Birds{
+public class Chimera extends TorchBehavior implements SoundBehavior, FlyBehavior {
 
         /*
         // v1: keep one instance
@@ -57,7 +57,6 @@ public class Chimera extends Torching implements Animal, Birds{
             return uniqueInstance;
         }
 
-
     @Override
     public String Name() {
         return this.getClass().getSimpleName();
@@ -86,6 +85,11 @@ public class Chimera extends Torching implements Animal, Birds{
     @Override
     public boolean canFly() {
         return true;
+    }
+
+    @Override
+    public int getFireLevel(){
+        return 5;
     }
 
     public void run(Runnable action){

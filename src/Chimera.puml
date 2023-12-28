@@ -1,59 +1,62 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-interface Animal {
-String Name()
-void Sound()
-int Speed()
+interface SoundBehavior {
++String Name()
++void Sound()
++int Speed()
 }
 
-interface Birds{
-String Name()
-boolean Wings()
-boolean canFly()
+interface FlyBehavior{
++String Name()
++boolean Wings()
++boolean canFly()
 }
 
-abstract class Torching{
-public Torching(int level)
-public abstract String Name()
-public abstract boolean isLegend()
-public int getFireLevel()
+abstract class TorchBehavior{
+- level:int
++String Name()
++Torching(int level)
++boolean isLegend()
++int getFireLevel()
 }
 
 class Lion{
-public String Name()
-public void Sound()
-public int Speed()
++String Name()
++void Sound()
++int Speed()
 }
 
 class Pig{
-public String Name()
-public void Sound()
-public int Speed()
++String Name()
++void Sound()
++int Speed()
 }
 
 class Dragon{
-public Dragon(int level)
-public String Name()
-public boolean isLegend()
++String Name()
++Torching(int level)
++boolean isLegend()
++int getFireLevel()
 }
 
 class Chimera{
-public Chimera(int level)
-public String Name()
-public boolean isLegend()
-public void Sound()
-public int Speed()
-public boolean Wings()
-public boolean canFly()
-public void run(Runnable action)
+- uniqueInstance:Chimera
++Chimera(int level)
++String Name()
++void Sound()
++int Speed()
++boolean Wings()
++boolean canFly()
++boolean isLegend()
++void run(Runnable action)
 }
 
-Animal <|-- Lion
-Animal <|--Pig
-Animal <|--Chimera
-Birds <|--Chimera
-Torching <|-- Dragon
-Torching <|-- Chimera
+SoundBehavior <|.. Lion
+SoundBehavior <|.. Pig
+SoundBehavior <|.. Chimera
+FlyBehavior <|.. Chimera
+TorchBehavior <|.. Dragon
+TorchBehavior <|.. Chimera
 
 @enduml

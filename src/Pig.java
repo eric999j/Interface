@@ -1,4 +1,4 @@
-public class Pig implements Animal{
+public class Pig implements SoundBehavior {
     @Override
     public String Name() {
         return this.getClass().getSimpleName();

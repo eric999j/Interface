@@ -1,7 +1,7 @@
-public abstract class Torching {
+public abstract class TorchBehavior{
     final private int level; // 1-5
 
-    public Torching(int level){
+    public TorchBehavior(int level){
         this.level = level;
     }
 

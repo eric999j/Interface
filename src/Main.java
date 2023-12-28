@@ -36,6 +36,5 @@ public class Main {
         *
         * */
         chimera.run(chimera::Sound);
-
     }
 }

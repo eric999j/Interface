@@ -1,4 +1,4 @@
-public interface Birds {
+public interface FlyBehavior{
     String Name();
     boolean Wings();
     boolean canFly();

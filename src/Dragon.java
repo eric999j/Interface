@@ -1,4 +1,4 @@
-public class Dragon extends Torching{
+public class Dragon extends TorchBehavior {
     public Dragon(int level) {
         super(level);
     }

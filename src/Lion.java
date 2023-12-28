@@ -1,4 +1,4 @@
-public class Lion implements Animal{
+public class Lion implements SoundBehavior {
 
     @Override
     public String Name() {
