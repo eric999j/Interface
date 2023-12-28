@@ -67,7 +67,7 @@ SoundBehavior <|.. Lion
 SoundBehavior <|.. Pig
 SoundBehavior <|.. Chimera
 FlyBehavior <|.. Chimera
-TorchBehavior <|.. Dragon
-TorchBehavior <|.. Chimera
+TorchBehavior <|-- Dragon
+TorchBehavior <|-- Chimera
 
 @enduml
