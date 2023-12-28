@@ -5,6 +5,8 @@ interface SoundBehavior {
 +String Name()
 +void Sound()
 +int Speed()
++String getSound()
++void setSound(String sound)
 }
 
 interface FlyBehavior{
@@ -22,14 +24,20 @@ abstract class TorchBehavior{
 }
 
 class Lion{
+-String sound
 +String Name()
 +void Sound()
++String getSound()
++void setSound(String sound)
 +int Speed()
 }
 
 class Pig{
+-String sound
 +String Name()
 +void Sound()
++String getSound()
++void setSound(String sound)
 +int Speed()
 }
 
@@ -41,10 +49,13 @@ class Dragon{
 }
 
 class Chimera{
+-String sound
 - uniqueInstance:Chimera
 +Chimera(int level)
 +String Name()
 +void Sound()
++String getSound()
++void setSound(String sound)
 +int Speed()
 +boolean Wings()
 +boolean canFly()

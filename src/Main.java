@@ -2,11 +2,13 @@ public class Main {
     public static void main(String[] args) {
         Lion lion = new Lion();
         System.out.println(lion.Name());
+        lion.setSound("growl");
         lion.Sound();
         System.out.println("speed "+lion.Speed()+"\n");
 
         Pig pig = new Pig();
         System.out.println(pig.Name());
+        pig.setSound("wee");
         pig.Sound();
         System.out.println("speed "+pig.Speed()+"\n");
 
@@ -19,6 +21,8 @@ public class Main {
         System.out.println(chimera.Name());
         System.out.println("has wings: "+chimera.Wings());
         System.out.println("can fly: "+chimera.canFly());
+        chimera.setSound("bleat");
+        chimera.Sound();
         System.out.println("speed "+chimera.Speed());
         System.out.println("is legend: "+ chimera.isLegend());
         System.out.println("fire level: "+ chimera.getFireLevel()+"\n");

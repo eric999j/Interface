@@ -42,6 +42,7 @@ public class Chimera extends TorchBehavior implements SoundBehavior, FlyBehavior
          done from the main memory.
         */
         private volatile static Chimera uniqueInstance;
+        private String sound;
 
         private Chimera(int level) {super(level);}
 
@@ -69,7 +70,15 @@ public class Chimera extends TorchBehavior implements SoundBehavior, FlyBehavior
 
     @Override
     public void Sound() {
-        System.out.println("growl");
+        System.out.println(this.getSound());
+    }
+
+    public String getSound() {
+        return this.sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
     }
 
     @Override
